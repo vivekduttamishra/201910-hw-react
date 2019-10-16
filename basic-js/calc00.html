@@ -16,6 +16,8 @@
         }
     </style>
 
+   
+
 </head>
 
 <body>
@@ -24,12 +26,12 @@
         <div>
             Number
             <input type='text' id='number' />
-            <input type='button' value='Add To List'  />
-            <input type='button' value='Clear Display'  />
+            <input type='button' value='Add To List' onclick="addToList();"  />
+            <input type='button' value='Clear Display' onclick='window.clear();' />
             <input type='button' value='Reset Calculator'  />
 
             <br/>
-            <input type='button' value='Sum'  />
+            <input type='button' value='Sum'  onclick="sum();" />
             <input type='button' value='Average'  />
             <input type='button' value='Find Min'  />
 
@@ -58,6 +60,49 @@
         <input type='button' value='refresh list'  />
     </fieldset>
 
+
+    <script>
+            var consoleDiv=document.getElementById('console');
+            var numberTextBox=document.getElementById('number');
+            var numberListBox=document.getElementById('numberList');
+
+            var numbers=[];
+
+            function consoleWrite(text){
+                consoleDiv.innerHTML+=(text+'<br/>');
+            }
+
+            
+
+            function addToList(){
+                var value=parseFloat(numberTextBox.value);
+                if(isNaN(value))
+                    consoleWrite('Invalid Input '+numberTextBox.value);
+                else{
+                    numbers.push(value);
+                    numberListBox.innerHTML+=('<li>'+value+'</li>');
+                }
+            }
+
+            function sum(){
+                //console.log('calculating the sum of values');
+                var result=0;
+                for(var i=0;i<numbers.length;i++){
+                    result+=numbers[i];
+                }
+                
+                consoleWrite('sum is '+result);
+            }
+
+
+            function clear(){                
+                consoleDiv.innerHTML='';
+                numberListBox.innerHTML='';
+                numberTextBox.value='';
+            }
+            //document.getElementById('sumButton').onclick=sum;
+    
+    </script>
 </body>
 
 </html>
