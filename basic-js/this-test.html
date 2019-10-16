@@ -1,0 +1,16 @@
+<script>
+
+function show(){
+    console.log('Person [name='+this.name+',\tage='+this.age+']');
+}
+
+var p1={name:'Shivanshi',age:13,info:show};
+
+p1.info();
+
+show();
+
+var name='window';//window.name='window'
+show(); //window.show(); //window acts as this
+
+</script>
