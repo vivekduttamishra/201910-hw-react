@@ -1,0 +1,32 @@
+<script>
+
+function plus(x,y){
+    return x+y;
+}
+
+var sum=plus;
+
+console.log('typeof(plus)',typeof(plus));
+console.log('typeof(sum)',typeof(sum));
+console.log('sum(2,3)',sum(2,3));
+console.log('plus(2,3)',plus(2,3));
+
+console.log('window.plus(2,3)',window.plus(2,3));
+console.log('window.sum(2,3)',window.sum(2,3));
+
+
+var sub=function minus(x,y){
+    return x-y;
+}
+
+console.log('typeof(sub)',typeof(sub));
+
+console.log('sub(5,3)',sub(5,3));
+console.log('window.sub(5,2)',window.sub(5,2));
+
+console.log('typeof(minus)',typeof(minus));
+console.log('minus(5,2)',minus(5,2));
+
+
+
+</script>

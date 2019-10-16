@@ -1,9 +1,9 @@
 
 
-http://d.conceptarchitect.in/calc.html
-
-
+The link to this repository
 https://github.com/vivekduttamishra/201910-hw-react
 
+
+Use this link as prefix to any github hosted html page to see html format
 http://htmlpreview.github.io/?
 
