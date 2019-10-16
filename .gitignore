@@ -1,0 +1,8 @@
+*.ipynb 
+*.pyc 
+private/ 
+private/ 
+*.tmp 
+node_modules/ 
+*.ipynb 
+*.pyc 
