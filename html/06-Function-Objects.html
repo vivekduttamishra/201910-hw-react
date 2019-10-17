@@ -13426,6 +13426,763 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="filter-function">filter function<a class="anchor-link" href="#filter-function">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">var</span> <span class="nx">primes</span><span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isPrime</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">primes</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[
+   2,  3, 11, 17, 19,
+  23, 53, 47, 97
+]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">n</span><span class="p">=&gt;</span><span class="nx">n</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[ 3, 18, 15, 81 ]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="divisible-by-function">divisible by function<a class="anchor-link" href="#divisible-by-function">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">var</span> <span class="nx">isDivisibleBy</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="o">%</span><span class="nx">y</span><span class="o">==</span><span class="mi">0</span>
+<span class="p">};</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="challenge">challenge<a class="anchor-link" href="#challenge">&#182;</a></h3><ol>
+<li><p>how to pass second parameter</p>
+<ul>
+<li>search doesn't take a second parameter</li>
+<li>search doesn't pass a second parameter to <strong>matchFunction</strong></li>
+</ul>
+</li>
+<li><p>so we can't pass a function that takes two parameter</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="nx">isDivisibleBy</span><span class="p">);</span> <span class="c1">//---&gt; if(matchFunction(value))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="what-divisiblity-are-we-actually-checking-here?">what divisiblity are we actually checking here?<a class="anchor-link" href="#what-divisiblity-are-we-actually-checking-here?">&#182;</a></h3><h2 id="solution">solution<a class="anchor-link" href="#solution">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">var</span> <span class="nx">isDivisibleBy</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">divisor</span><span class="p">){</span>
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">number</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">number</span><span class="o">%</span><span class="nx">divisor</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="nx">test</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">var</span> <span class="nx">values</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">16</span><span class="p">];</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span><span class="nx">isDivisibleBy</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[ 4, 24, 36, 16 ]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isDivisibleBy</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[ 9, 15, 24, 36, 18 ]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="for-match-operators">for match operators<a class="anchor-link" href="#for-match-operators">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">not</span><span class="p">(</span><span class="nx">matchFn</span><span class="p">){</span>
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+        <span class="k">return</span> <span class="o">!</span> <span class="nx">matchFn</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">test</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">var</span> <span class="nx">search</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">matchFunction</span><span class="p">,</span><span class="nx">values</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">result</span><span class="o">=</span><span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">values</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">matchFunction</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+            <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">isPrime</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[ 2, 11, 17 ]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">not</span><span class="p">(</span><span class="nx">isPrime</span><span class="p">),</span><span class="nx">values</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+   9,  4, 15, 24,
+  36, 18, 16
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">search</span><span class="p">(</span><span class="nx">not</span><span class="p">(</span><span class="nx">isDivisibleBy</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span><span class="nx">values</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+   2,  9, 11, 17, 4,
+  24, 36, 18, 16
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">any</span><span class="p">(...</span><span class="nx">matchFunctions</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">value</span><span class="p">)=&gt;{</span>
+      <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">matchFunction</span> <span class="k">of</span> <span class="nx">matchFunctions</span><span class="p">)</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">matchFunction</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+              <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">all</span><span class="p">(...</span><span class="nx">matchFunctions</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">value</span><span class="p">)=&gt;{</span>
+      <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">matchFunction</span> <span class="k">of</span> <span class="nx">matchFunctions</span><span class="p">)</span>
+          <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">matchFunction</span><span class="p">(</span><span class="nx">value</span><span class="p">))</span>
+              <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">any</span><span class="p">(</span><span class="nx">isDivisibleBy</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="nx">isPrime</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+   2, 11, 17, 4,
+  24, 36, 16
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">all</span><span class="p">(</span><span class="nx">isEven</span><span class="p">,</span> <span class="nx">isDivisibleBy</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[ 24, 36, 18 ]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="map-function">map function<a class="anchor-link" href="#map-function">&#182;</a></h3><ul>
+<li>similar to <strong>select</strong> of c# LINQ</li>
+<li>maps a list one type of value into a list of another type value</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span><span class="p">=&gt;</span><span class="nx">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="s1">&#39;Even&#39;</span><span class="o">:</span><span class="s1">&#39;Odd&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+  &#39;Even&#39;, &#39;Odd&#39;,
+  &#39;Odd&#39;,  &#39;Odd&#39;,
+  &#39;Even&#39;, &#39;Odd&#39;,
+  &#39;Even&#39;, &#39;Even&#39;,
+  &#39;Even&#39;, &#39;Even&#39;
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">n</span><span class="p">=&gt;</span>  <span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="s1">&#39;Even&#39;</span><span class="o">:</span><span class="s1">&#39;Odd&#39;</span><span class="p">});</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+evalmachine.&lt;anonymous&gt;:1
+values.map( n=&gt;  {value:number, type: n%2==0?&#39;Even&#39;:&#39;Odd&#39;});
+                                    ^
+
+SyntaxError: Unexpected token :
+    at new Script (vm.js:83:7)
+    at createScript (vm.js:265:10)
+    at Object.runInThisContext (vm.js:313:10)
+    at run ([eval]:1054:15)
+    at onRunRequest ([eval]:888:18)
+    at onMessage ([eval]:848:13)
+    at process.emit (events.js:203:13)
+    at emit (internal/child_process.js:876:12)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="solution-1">solution 1<a class="anchor-link" href="#solution-1">&#182;</a></h3><ul>
+<li>write a full body lambda to avoid confusion</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">n</span><span class="p">=&gt;</span> <span class="p">{</span> 
+
+    <span class="k">return</span>   <span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="nx">n</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="s1">&#39;Even&#39;</span><span class="o">:</span><span class="s1">&#39;Odd&#39;</span><span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+  { value: 2, type: &#39;Even&#39; },
+  { value: 9, type: &#39;Odd&#39; },
+  { value: 11, type: &#39;Odd&#39; },
+  { value: 17, type: &#39;Odd&#39; },
+  { value: 4, type: &#39;Even&#39; },
+  { value: 15, type: &#39;Odd&#39; },
+  { value: 24, type: &#39;Even&#39; },
+  { value: 36, type: &#39;Even&#39; },
+  { value: 18, type: &#39;Even&#39; },
+  { value: 16, type: &#39;Even&#39; }
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="solution-2">solution 2<a class="anchor-link" href="#solution-2">&#182;</a></h3><ul>
+<li>put the json object inside a parentheses <strong>()</strong></li>
+<li>this will make javascript understand that we are reutrn an expression<ul>
+<li>which happens be a json object</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">n</span><span class="p">=&gt;</span>  <span class="p">({</span><span class="nx">value</span><span class="o">:</span><span class="nx">n</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="s1">&#39;Even&#39;</span><span class="o">:</span><span class="s1">&#39;Odd&#39;</span><span class="p">}));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+  { value: 2, type: &#39;Even&#39; },
+  { value: 9, type: &#39;Odd&#39; },
+  { value: 11, type: &#39;Odd&#39; },
+  { value: 17, type: &#39;Odd&#39; },
+  { value: 4, type: &#39;Even&#39; },
+  { value: 15, type: &#39;Odd&#39; },
+  { value: 24, type: &#39;Even&#39; },
+  { value: 36, type: &#39;Even&#39; },
+  { value: 18, type: &#39;Even&#39; },
+  { value: 16, type: &#39;Even&#39; }
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="nx">n</span><span class="p">=&gt;</span>  <span class="p">(</span>
+    <span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="nx">n</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="s1">&#39;Even&#39;</span><span class="o">:</span><span class="s1">&#39;Odd&#39;</span><span class="p">}</span>
+<span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[
+  { value: 2, type: &#39;Even&#39; },
+  { value: 9, type: &#39;Odd&#39; },
+  { value: 11, type: &#39;Odd&#39; },
+  { value: 17, type: &#39;Odd&#39; },
+  { value: 4, type: &#39;Even&#39; },
+  { value: 15, type: &#39;Odd&#39; },
+  { value: 24, type: &#39;Even&#39; },
+  { value: 36, type: &#39;Even&#39; },
+  { value: 18, type: &#39;Even&#39; },
+  { value: 16, type: &#39;Even&#39; }
+]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
