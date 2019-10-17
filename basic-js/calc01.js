@@ -23,12 +23,15 @@ function addToList(){
 
 function sum(){
     //console.log('calculating the sum of values');
+    //business logic
     var result=0;
     for(var i=0;i<numbers.length;i++){
         result+=numbers[i];
     }
-    
-    consoleWrite('sum is '+result);
+    // business to ui translation
+
+    // ui
+    consoleWrite('sum is '+result); //$("#console").append('sum is '+result)
 }
 
 function average(){

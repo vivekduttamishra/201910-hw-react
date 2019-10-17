@@ -1,0 +1,13 @@
+
+.info{
+    font-size: 2em;
+    font-style: italic;
+    font-weight: bold;
+    
+}
+
+.page{
+    margin:10px;
+    border:2px solid black;
+    padding:10px;
+}
