@@ -1,4 +1,4 @@
-export class Book{
+class Book{
     constructor(title,author,rating,price){
         this.title=title;
         this.author=author;
@@ -11,7 +11,7 @@ export class Book{
     }
 }
 
-export class BookStore{
+class BookStore{
     
     constructor(){
         this.books=[];
@@ -35,7 +35,7 @@ export class BookStore{
 }
 
 
-export function getDummyBookStore(){
+function getDummyBookStore(){
     let store=new BookStore();
     store.addBook(new Book('The Count of Monte Cristo','Alexandre Dumas',4.8,250));
     store.addBook(new Book('The Brethren','John Grisham',4.1,320));
@@ -56,3 +56,10 @@ function printBooks(header,books){
     }
     console.log('---');
 }
+
+
+//main app
+
+let books=getDummyBookStore().getAll();
+
+printBooks('All Books',books);
