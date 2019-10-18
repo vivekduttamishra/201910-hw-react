@@ -1,10 +1,4 @@
-import React from 'react';
-import { any } from 'prop-types';
-import { moveCursor } from 'readline';
 
-class DummyComponent extends React.Component {
-
-}
 
 const findWinner = function (cells: string[]): string | null {
 
@@ -37,16 +31,16 @@ const findWinner = function (cells: string[]): string | null {
     return null; //no winner yet
 }
 
-const moveLeft = (cells: string[]): number{
+const moveLeft = (cells: string[]): number=>{
 
     return cells.filter(c => c == '_').length;
 }
 
-const isGameOver = (cells: string[]): boolean{
+const isGameOver = (cells: string[]): boolean=>{
     return moveLeft(cells) == 0 || findWinner(cells) !== null;
 }
 
-const isStalemate = (cells: string[]): boolean {
+const isStalemate = (cells: string[]): boolean =>{
     return moveLeft(cells) == 0 && findWinner(cells) === null;
 }
 
