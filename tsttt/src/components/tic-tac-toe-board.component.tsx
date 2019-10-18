@@ -17,7 +17,7 @@ const _component = () => {
             </div>
             <div className='row'>
                 <Cell id={6} value='O'/>
-                <Cell id={7} />
+                <Cell id={7}  value='*'/>
                 <Cell id={8} value='X'/>
             </div>
 

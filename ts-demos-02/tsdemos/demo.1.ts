@@ -1,13 +1,13 @@
 //optional parameter method
 
 
-function table(value:number,times?:number){
+function table09(value:number,times?:number){
     if(times===undefined)times=10;
     for(let i=1;i<=times;i++){
         console.log(`${value}*${i}`,value*i);
     }
 }
 
-table(19,10);
-table(17,5);
-table(18);
+table09(19,10);
+table09(17,5);
+table09(18);

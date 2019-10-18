@@ -18,9 +18,7 @@ var person={
     name:'Vivek'
 };
 
-function printLength(obj:HasLength){
-    console.log(`length of ${obj} is ${obj.length}`);
-}
+
 
 class Movie implements HasLength{
     length:number;
@@ -35,11 +33,15 @@ class Movie implements HasLength{
 }
 
 
+function printLength(obj:HasLength){
+    console.log(`length of ${obj} is ${obj.length}`);
+}
+
 (function(){
 
     printLength(rect);
     printLength(road);
-    //printLength(person); //not lengthy
+    printLength(person); //no HasLength
     printLength('Hello World');
     printLength(new Movie('Harry Potter 1',132));
   
