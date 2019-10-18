@@ -1,0 +1,27 @@
+1. client calls redux.dispatch for a action creator
+
+2. action creator talks to external source (such as web) 
+	* should invoke any external / async operations
+	* should reuturn an action
+		* action is a json object
+		* should have a type field defining action identifier
+		* may include additional data
+
+
+3. once dispatcher gets action from action creator it invokes all reducers
+
+	* each reducer is mapped to a given in store
+	* while invoke reducer dispatcher passes two parameters
+		1. current value of the key or null
+			*SHOULD NEVER BE undefined
+		2. action received from the action creator
+
+4. each reducer can decide if they want to handle current action
+	* if no they must return first parameter 
+	* if yest they should return a **new** object that will replace the old key value in the store
+
+
+5. once reducer returns a value dispatchers checks if it is  a new value
+	* if yes --> store is updated
+	* if no --> store is left untouched.
+	
