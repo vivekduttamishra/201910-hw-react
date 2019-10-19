@@ -1,28 +1,32 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getAllNotes} from '../store/action-creators';      
+import {getAllNotes,changeMode} from '../store/action-creators';      
 import { NotesStore } from '../model/notes-store';
+import {MODE_CREATE,MODE_SIGNIN} from '../store/modes';
+import {Link} from 'react-router-dom';
 
 
 const _component = (props: any) => {
     return (
         <nav className="navbar navbar-expand-sm navbar-light" style={{backgroundColor: 'red'}} >
-            <a className="navbar-brand" href="#">{props.siteTitle}</a>
+            
+            <Link className="navbar-brand" to='/' >{props.siteTitle}</Link>
+
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">
+                        <Link to='/note/add' className="nav-link" >
                             <i className="fa fa-plus-circle"></i> Note
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">
+                        <Link className="nav-link" to="/user/signin"  >
                         <i className="fa fa-sign-in"></i> Login
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item active">
                         <a className="nav-link" href="#"  aria-disabled="true">
@@ -59,7 +63,8 @@ const mapReduxStateToProps=(state:NotesStore)=>{
 
 
 const dispatchers={
-    getAllNotes
+    getAllNotes,
+    changeMode
 };
 
 
