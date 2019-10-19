@@ -19,6 +19,8 @@ export const currentNoteReducer=(previousState:Note|null=null, action:any)=>{
             if(action.notes.length>0)
                 return action.notes[0]; //this is now the current note
             break;
+        case ActionTypes.ACTION_NOTE_BY_ID:
+            return action.note;
         default:
             return previousState;
     }

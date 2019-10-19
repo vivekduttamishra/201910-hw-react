@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getAllNotes} from '../store/action-creators';
 import {Note} from '../model/note';
+import NoteThumbnail from './note-thumbnail.component';
 
 const _component=(props:any)=>{
 
@@ -21,7 +22,7 @@ const _component=(props:any)=>{
 
     const renderNotes=()=>{
         return  props.notes.map((note:any)=>(
-            <li className='list-group-item list-group-item-action'>{note.title}</li>
+           <NoteThumbnail note={note} key={note.id} />
         ));
     }
 

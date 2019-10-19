@@ -17,6 +17,17 @@ export const getAllNotes=()=>{
     };
 };
 
+export const getNoteById=(id:number)=>{
+    //Todo: your logic here
+    // go and get the notes from the service
+    let note= service.getById(id);
+    // create action for the reducer
+    return{
+        type:ActionTypes.ACTION_NOTE_BY_ID,
+        note
+    };
+};
+
 
 export const changeMode=(mode:string)=>{
     //Mr Reducer please change the mode to what I supply in your store
