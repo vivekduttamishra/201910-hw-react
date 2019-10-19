@@ -139,17 +139,12 @@ console.log('client proram started');
 console.log('INITIAL STORE',store.getState());
 
 console.log('calling getAllNotes()');
-
-//STEP 1: call ActionCreator. you get ACTION
-let action=getAllNotes();
-//NOTE: store is not updated yet
+getAllNotes();
 console.log(store.getState());
 
-//STEP 2: dispatch ACTION to store. This will call All reducer
-//nodesReducer will return all notes
-//selectedNote Reducer will ignore this action
-//currentUser reducer will ignore this action
-store.dispatch(action);
+
+
+store.dispatch(getAllNotes());
 console.log(store.getState());
 
 store.dispatch(login('vivek','vivek'));
@@ -158,8 +153,5 @@ console.log(store.getState());
 store.dispatch(login('Vivek','admin'));
 console.log(store.getState());
 
-//STEP 2: dispatchec action {type: USER_LOGOUT}
-//selectedNotes reduder will return  empty []
-//currentUser reducer will return null user
 store.dispatch(logout());
 console.log(store.getState());
