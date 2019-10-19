@@ -1,0 +1,133 @@
+.footer, footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    
+  }
+
+  .footer a,footer a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+  }
+
+  .body{
+    margin:20px;
+    margin-bottom: 50px;
+    
+  }
+
+.note-details{
+  border-radius: 5px;
+  width:100%;
+  height:320px;
+  max-height: 320px;
+  border:1px solid lightgray;
+}
+
+.list-group-item{
+  cursor: pointer;
+}
+
+.btn{
+  margin:5px;
+}
+
+.info{
+
+}
+.info h1{
+  border-bottom:1px solid gray;
+  margin-bottom:5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.info-text{
+  margin:1.2em;
+  padding:5px;
+  font-style: italic;
+  min-height: 70%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.info-tags{
+  font-size:0.8em;
+  padding:5px;
+  font-weight: bold;
+  font-style:italic;
+  font-family: 'Courier New', Courier, monospace;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+.info-options{
+  padding-top:5px;
+  bottom:0;
+  text-align: right;
+}
+
+.info-options .btn{
+  bottom:0;
+}
+
+.note-list{
+  
+  
+}
+
+.editor{
+
+}
+
+.editor h1 input{
+  border-bottom:1px solid gray;
+  margin-bottom:5px;
+  font-size: 1.5em;
+  border:0px;
+  border-bottom: 1px solid lightgray;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.editor-text {
+  margin:1.2em;
+  padding:5px;
+  font-style: italic;
+  min-height: 70%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width:100%;
+  min-height: 100px;
+  
+}
+
+.editor-text input{
+  border:0;
+  border-top:1px solid lightgray;
+  border-bottom:1px solid lightgray;
+}
+
+.editor-tags{
+  font-size:0.8em;
+  padding:5px;
+  font-weight: bold;
+  font-style:italic;
+  font-family: 'Courier New', Courier, monospace;
+  /*border-bottom: 1px solid gray;
+  border-top: 1px solid gray;*/
+}
+.editor-tags input{
+  border:0;
+  border-bottom: 1px solid lightgray;
+  width:100%;
+}
+
+.editor-options{
+  text-align: right;
+}
+.editor-options .btn{
+  
+}
+
+
