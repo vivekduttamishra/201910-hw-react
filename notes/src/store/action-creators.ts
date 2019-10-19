@@ -28,6 +28,51 @@ export const getNoteById=(id:number)=>{
     };
 };
 
+export const addNote=(note:Note)=>{
+    //Todo: your logic here
+    service.addNote(note);
+    return{
+        type:ActionTypes.ACTION_NOTE_ADDED,
+        note
+    };
+};
+
+export const removeNote=(id:number)=>{
+    //Todo: your logic here
+    service.remove(id);
+    return{
+        type:ActionTypes.ACTION_NOTE_DELETE,
+        id
+    };
+};
+
+export const updateNote=(note:Note)=>{
+    //Todo: your logic here
+    
+    return{
+        type:ActionTypes.ACTION_NOTE_EDIT,
+        note
+    };
+};
+
+export const login=(username:string,password:string)=>{
+    //Todo: your logic here
+    
+    return{
+        type:ActionTypes.ACTION_USER_SIGNIN,
+        username,
+        status: username.length===password.length && username!==password    
+    };
+};
+
+export const logout=()=>{
+    //Todo: your logic here
+    
+    return{
+        type:ActionTypes.ACTION_USER_SIGNOUT        
+    };
+};
+
 
 export const changeMode=(mode:string)=>{
     //Mr Reducer please change the mode to what I supply in your store
